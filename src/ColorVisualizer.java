@@ -6,7 +6,7 @@ import javax.swing.JPanel;
 public class ColorVisualizer extends JPanel {
 
     private static final long serialVersionUID = 1L;
-    public final int ITERATION_LIMIT = 500;
+    public final int ITERATION_LIMIT = 5000;
     public final int GRAPH_WIDTH = 1000;
     public final int LEFT_MARGIN = 50;
 
@@ -41,11 +41,32 @@ public class ColorVisualizer extends JPanel {
     }
 
     private Color mapColor(int n) {
-        // These functions work, but do not meet the requirements becuase
-        // they will cause errors when the ITERATION_LIMIT increases
-        int red = n / 2;
-        int green = 255 - n / 2;
-        int blue = (int) Math.sqrt(n) * 10;
+
+        if(n<0){
+            return Color.BLACK;
+        }
+
+        double normedX = 1.0 * n/ITERATION_LIMIT;
+
+        int red = (int) (255 * normedX);
+        int green = (int)Math.abs(127.5*Math.sin(.01256637061  * (n-ITERATION_LIMIT/4))+127.5);
+        int blue = 255 - (int)(255 * normedX);
+
         return new Color(red, green, blue);
     }
+
+    // private Color mapColor(double normedN) {
+        
+    //     if (normedN < 0){
+    //         return Color.BLACK;
+    //     }
+
+    //     int red = (int) (255 * normedN);
+    //     int green = 0;
+    //     int blue = 255 - (int)(255 * normedN);
+
+
+    //     return new Color(red, green, blue);
+    // }
+
 }
