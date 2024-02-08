@@ -43,9 +43,9 @@ public class FractalPanel extends JPanel implements MouseListener {
         int clickX = e.getX();
         int clickY = e.getY();
 
-        //TODO: Change 10 into variables
-        Complex TL = panel.translate(clickX + width/10, clickY + height/10);
-        Complex BR = panel.translate(clickX - width/10, clickY - height/10);
+        //TODO: Change 5 into variables
+        Complex TL = panel.translate(clickX - width/5, clickY - height/5);
+        Complex BR = panel.translate(clickX + width/5, clickY + height/5);
         panel.setComplexCorners(TL, BR);
         repaint();
     }
