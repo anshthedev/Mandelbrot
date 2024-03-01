@@ -1,6 +1,6 @@
 public class Mandelbrot {
-    
-    public static int iterationLimit = 500;
+
+    public static int iterationLimit = 1000;
 
     public static int testPoint(Complex c){
         int iterationCounter = 1;

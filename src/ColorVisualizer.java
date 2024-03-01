@@ -6,7 +6,7 @@ import javax.swing.JPanel;
 public class ColorVisualizer extends JPanel {
 
     private static final long serialVersionUID = 1L;
-    public final int ITERATION_LIMIT = 500;
+    public final int ITERATION_LIMIT = Integer.MAX_VALUE;
     public final int GRAPH_WIDTH = 1000;
     public final int LEFT_MARGIN = 50;
 
@@ -54,19 +54,4 @@ public class ColorVisualizer extends JPanel {
 
         return new Color(red, green, blue);
     }
-
-    // private Color mapColor(double normedN) {
-        
-    //     if (normedN < 0){
-    //         return Color.BLACK;
-    //     }
-
-    //     int red = (int) (255 * normedN);
-    //     int green = 0;
-    //     int blue = 255 - (int)(255 * normedN);
-
-
-    //     return new Color(red, green, blue);
-    // }
-
 }

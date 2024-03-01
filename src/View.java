@@ -17,6 +17,14 @@ public class View{
         return new Complex(real, imag);
     
     }
+
+    public int getX(Complex c){
+        return (int)((c.getReal() - xOffset) / xSlope);
+    }
+
+    public int getY(Complex c){
+        return (int)((c.getImaginary() - yOffset) / ySlope);
+    }
     
     public void setComplexCorners(Complex topLeft, Complex botRight){
         xOffset = topLeft.getReal();

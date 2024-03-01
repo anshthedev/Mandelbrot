@@ -1,7 +1,6 @@
 import javax.swing.JFrame;
 
 public class FractalRunner {
-
     public static void main(String[] args) {
         JFrame f = new JFrame("Mandelbrot");
         FractalPanel p = new FractalPanel();
